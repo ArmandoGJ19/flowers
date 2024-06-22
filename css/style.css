@@ -1,0 +1,37 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Asegura que no haya barras de desplazamiento */
+}
+
+#back {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white; /* Color del texto del enlace */
+    background-color: #007BFF; /* Color de fondo del enlace */
+    border: none;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Fija la posición del botón */
+    top: 20px; /* Ajusta según sea necesario */
+    left: 20px; /* Ajusta según sea necesario */
+}
+
+#back:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+}
+
+@media (max-width: 600px) {
+    #back {
+        font-size: 14px;
+        padding: 8px 16px;
+        top: 10px;
+        left: 10px;
+    }
+}

@@ -1,0 +1,65 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+canvas {
+    display: block;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#nameInput {
+    margin: 10px 0;
+}
+
+#row {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Añadir un espacio entre los botones */
+    position: absolute;
+    bottom: 20px;
+}
+
+button, #viewFlowers {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white; /* Cambiar el color del texto del enlace */
+    background-color: #007BFF; /* Añadir un color de fondo al enlace */
+    border: none;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover, #viewFlowers:hover {
+    background-color: #0056b3; /* Cambiar el color de fondo al pasar el mouse */
+}
