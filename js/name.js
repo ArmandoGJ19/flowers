@@ -25,11 +25,13 @@ function setup() {
 }
 
 function generatePoints(name) {
-    points = displayFont.textToPoints(name, 0, 0, 200, {
+    // Aumenta el tamaño de la fuente aquí
+    let fontSize = 300; // Ajusta este valor para aumentar el tamaño del texto
+    points = displayFont.textToPoints(name, 0, 0, fontSize, {
         sampleFactor: 0.5,
     });
 
-    bounds = displayFont.textBounds(name, 0, 0, 200);
+    bounds = displayFont.textBounds(name, 0, 0, fontSize);
 
     for(let i = 0; i < points.length; i++){
         let pt = points[i];
@@ -51,7 +53,8 @@ function draw() {
 function drawText(){
     noStroke();
     textFont(bodyFont);
-    textSize(16);
+    // Aumenta el tamaño de la fuente del texto aquí también
+    textSize(32); // Ajusta este valor para aumentar el tamaño del texto
     fill(150);
     text('', width / 2 - bounds.w / 2 + 30, height / 2 + bounds.h / 2 + 20);
 }
@@ -105,3 +108,14 @@ function drawFlowers(pointX, pointY){
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
+document.getElementById('viewFlowers').addEventListener('click', function (e) {
+    e.preventDefault(); // Evitar que el enlace redireccione de inmediato
+    const transitionLayer = document.getElementById('transitionLayer');
+    transitionLayer.setAttribute('transition-style', 'in:circle:hesitate');
+
+    // Esperar el tiempo de la animación antes de redirigir
+    setTimeout(function () {
+        window.location.href = e.target.href;
+    }, 1500);
+});
+

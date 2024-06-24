@@ -151,3 +151,14 @@ function Blade(segments) {
 function addCloud(x, y) {
     clouds.push({x: x, y: y});
 }
+document.getElementById('back').addEventListener('click', function (e) {
+    e.preventDefault(); // Evitar que el enlace redireccione de inmediato
+    const transitionLayer = document.getElementById('transitionLayer');
+    transitionLayer.setAttribute('transition-style', 'out:circle:hesitate');
+
+    // Esperar el tiempo de la animación antes de redirigir
+    setTimeout(function () {
+        window.location.href = e.target.href;
+    }, 1500);
+});
+
